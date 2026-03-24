@@ -1,7 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
+time.sleep(2)
 class CartPage:
     def __init__(self, driver):
         self.driver = driver
@@ -11,6 +13,11 @@ class CartPage:
         self.wait.until(
             EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack"))
         ).click()
+
+        add_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack"))
+        )
+        add_button.click()
 
     def open_cart(self):
         self.wait.until(
