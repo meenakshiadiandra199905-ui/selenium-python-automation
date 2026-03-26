@@ -1,6 +1,6 @@
 # Automation tests for Shopping Cart
 import pytest
-from automation.pages.login_page import LoginPage
+from pages.login_page import LoginPage
 from automation.pages.cart_page import CartPage
 from automation.utils.logger import get_logger 
 from utils.data_reader import get_login_data
