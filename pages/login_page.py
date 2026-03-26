@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from automation.config.config import BASE_URL, USERNAME, PASSWORD
+from config.config import BASE_URL, USERNAME, PASSWORD
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 

@@ -1,8 +1,8 @@
 # Automation tests for Shopping Cart
 import pytest
 from pages.login_page import LoginPage
-from automation.pages.cart_page import CartPage
-from automation.utils.logger import get_logger 
+from pages.cart_page import CartPage
+from utils.logger import get_logger 
 from utils.data_reader import get_login_data
 
 @pytest.mark.flaky(reruns=2)
