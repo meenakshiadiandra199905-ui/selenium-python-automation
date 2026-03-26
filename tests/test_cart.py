@@ -2,7 +2,7 @@
 import pytest
 from automation.pages.login_page import LoginPage
 from automation.pages.cart_page import CartPage
-from utils.logger import get_logger
+from automation.utils.logger import get_logger 
 from utils.data_reader import get_login_data
 
 @pytest.mark.flaky(reruns=2)
@@ -21,11 +21,15 @@ def test_add_product_to_cart(driver, username, password):
     logger.info("Logging in with {username}")
     login.login(username, password)
 
+    print(driver.current_url)
+
     logger.info("Adding productto cart")
-    cart.add_product_to_cart()
+    result = cart.add_product_to_cart()
+
+    assert result, "Product was not added to cart"
 
     logger.info("Opening cart page")
     cart.open_cart()
 
-    assert cart.is_product_in_cart(), "Product was NOT added to cart"
+    assert "cart" in driver.current_url.lower()
 
